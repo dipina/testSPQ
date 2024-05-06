@@ -22,4 +22,4 @@ jobs:
           mvn --batch-mode --update-snapshots datanucleus:enhance datanucleus:schema-create
       
       - name: Build with Maven including integration tests
-        run: mvn --batch-mode --update-snapshots package -Pintegration-tests
+        run: mvn --batch-mode --update-snapshots package -Pperformance-tests -Pintegration-tests
