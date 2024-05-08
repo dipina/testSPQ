@@ -1,4 +1,4 @@
-package es.deusto.spq.pojo;
+package es.deusto.serialization;
 
 public class UserData {
 
@@ -6,7 +6,7 @@ public class UserData {
     private String password;
 
     public UserData() {
-        // for serialization
+
     }
 
     public String getLogin() {
@@ -26,6 +26,6 @@ public class UserData {
     }
 
     public String toString() {
-        return String.format("[login=%s, password=%s]", login, password);
+        return "[login=" + login + ", password=" + password + "]";
     }
 }

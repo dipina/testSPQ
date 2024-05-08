@@ -1,11 +1,11 @@
-package es.deusto.spq.pojo;
+package es.deusto.serialization;
 
 public class MessageData {
 
     private String message;
 
     public MessageData() {
-        // for serialization
+
     }
 
     public String getMessage() {

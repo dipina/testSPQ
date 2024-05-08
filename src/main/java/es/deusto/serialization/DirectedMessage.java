@@ -1,12 +1,12 @@
-package es.deusto.spq.pojo;
+package es.deusto.serialization;
 
-public class DirectMessage {
+public class DirectedMessage {
 
     private UserData userData;
     private MessageData messageData;
 
-    public DirectMessage() {
-        // for serialization
+    public DirectedMessage() {
+
     }
 
     public void setUserData(UserData userData) {

@@ -1,4 +1,4 @@
-package es.deusto.spq.server.jdo;
+package es.deusto.server.jdo;
 
 import java.util.Set;
 
@@ -6,7 +6,7 @@ import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.PrimaryKey;
 import javax.jdo.annotations.Join;
 import javax.jdo.annotations.Persistent;
-import java.util.LinkedHashSet;
+import java.util.HashSet;
 
 @PersistenceCapable
 public class User {
@@ -16,11 +16,9 @@ public class User {
 	
 	@Persistent(mappedBy="user", dependentElement="true")
 	@Join
-	Set<Message> messages = new LinkedHashSet<>();
+	Set<Message> messages = new HashSet<Message>();
 	
-	User() {
-
-	}
+	
 	
 	public User(String login, String password) {
 		this.login = login;
@@ -50,10 +48,11 @@ public class User {
 	 public Set<Message> getMessages() {return this.messages;}
 	 
 	 public String toString() {
-		StringBuilder messagesStr = new StringBuilder();
+		StringBuffer messagesStr = new StringBuffer();
 		for (Message message: this.messages) {
 			messagesStr.append(message.toString() + " - ");
 		}
-        return "User: login --> " + this.login + ", password --> " + this.password + ", messages --> [" + messagesStr + "]";
+        return "User: login --> " + this.login + ", password -->  " + this.password + ", messages --> [" + messagesStr + "]";
     }
 }
+
